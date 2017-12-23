@@ -1,0 +1,49 @@
+{
+  "name": "node-smartthinq",
+  "version": "1.0.0",
+  "description": "Node API for interfacing with SmartThinQ devices",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "jonathantneal/node-smartthinq",
+  "homepage": "https://github.com/${ user }/node-smartthinq#readme",
+  "bugs": "https://github.com/${ user }/node-smartthinq/issues",
+  "main": "index.dist.js",
+  "files": [
+    "index.js",
+    "index.dist.js"
+  ],
+  "scripts": {
+    "clean": "git clean -X -d -f",
+    "prepublishOnly": "npm test",
+    "pretest": "rollup index.js --output.format es --output.file index.dist.js && babel index.dist.js --presets=env --plugins=add-module-exports --out-file index.dist.js",
+    "test": "echo 'Running tests...'; npm run test:js",
+    "test:js": "eslint index.js --cache --ignore-pattern .gitignore"
+  },
+  "dependencies": {
+    "node-fetch": "^1.7",
+    "xml-js": "^1.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26",
+    "babel-plugin-add-module-exports": "^0.2",
+    "babel-preset-env": "^1.6",
+    "eslint": "^4.13",
+    "eslint-config-dev": "2.0",
+    "pre-commit": "^1.2",
+    "rollup": "^0.53.0"
+  },
+  "eslintConfig": {
+    "extends": "dev"
+  },
+  "keywords": [
+    "node",
+    "lg",
+    "smartthinq",
+    "web",
+    "api",
+    "fetch",
+    "xml",
+    "json"
+  ],
+  "private": true
+}
